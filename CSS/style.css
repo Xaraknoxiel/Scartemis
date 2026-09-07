@@ -1,0 +1,2818 @@
+/* =========================================================
+   VARIÁVEIS DE CORES - TEMA CLARO
+   =========================================================
+   
+   Todas as principais cores do site ficam aqui.
+   Dessa forma, para alterar a aparência do site no futuro,
+   basta modificar as variáveis neste bloco.
+*/
+
+:root {
+    /* Cores principais */
+    --rosa: #f7b8d8;
+    --rosa-forte: #ec79b5;
+    --rosa-claro: #fff2f8;
+
+    --lilas: #d9c2f2;
+    --lilas-claro: #f5edff;
+
+    --violeta: #9b4dcc;
+    --violeta-escuro: #63277f;
+
+    /* Cores de texto */
+    --texto: #281d2e;
+    --texto-suave: #655a6b;
+    --texto-claro: #ffffff;
+
+    /* Fundos */
+    --fundo: #fffaff;
+    --fundo-secundario: #faf5ff;
+    --branco: #ffffff;
+
+    /* Bordas e elementos */
+    --borda: #eaddec;
+
+    /* Sombras */
+    --sombra:
+        0 14px 40px rgba(74, 31, 96, 0.10);
+
+    --sombra-hover:
+        0 18px 45px rgba(74, 31, 96, 0.18);
+
+    /* Bordas arredondadas */
+    --raio: 18px;
+
+    /* Cores auxiliares */
+    --dourado: #d99a30;
+    --dourado-borda: #e7b56e;
+
+    --prata: #8992a2;
+    --prata-borda: #bfc5d1;
+
+    --sucesso: #4caf82;
+    --erro: #d9536f;
+
+    /* Overlay dos modais */
+    --overlay: rgba(35, 15, 40, 0.58);
+
+    /* Fundo do menu mobile */
+    --menu-fundo: rgba(255, 255, 255, 0.96);
+}
+
+
+/* =========================================================
+   VARIÁVEIS DE CORES - TEMA ESCURO
+   ========================================================= */
+
+[data-theme="dark"] {
+
+    /* Cores principais */
+    --rosa: #e69bc3;
+    --rosa-forte: #f08ac0;
+    --rosa-claro: #33202d;
+
+    --lilas: #b996d8;
+    --lilas-claro: #2b2033;
+
+    --violeta: #c477e8;
+    --violeta-escuro: #d69aef;
+
+    /* Cores de texto */
+    --texto: #f8edf9;
+    --texto-suave: #d5c8d8;
+    --texto-claro: #ffffff;
+
+    /* Fundos */
+    --fundo: #17111b;
+    --fundo-secundario: #201725;
+    --branco: #211825;
+
+    /* Bordas */
+    --borda: #49374f;
+
+    /* Sombras */
+    --sombra:
+        0 14px 40px rgba(0, 0, 0, 0.28);
+
+    --sombra-hover:
+        0 18px 45px rgba(0, 0, 0, 0.40);
+
+    /* Overlay */
+    --overlay: rgba(0, 0, 0, 0.68);
+
+    /* Menu mobile */
+    --menu-fundo: rgba(33, 24, 37, 0.98);
+
+    /* Cores dos produtos */
+    --dourado: #f0bd63;
+    --dourado-borda: #d9a24e;
+
+    --prata: #d1d6df;
+    --prata-borda: #aeb6c4;
+}
+
+
+/* =========================================================
+   RESET
+   =========================================================
+   
+   Remove margens e espaçamentos padrão do navegador.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+[hidden]{
+    display:none !important;
+}
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS DO HTML
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   REDUÇÃO DE ANIMAÇÕES
+   
+   Respeita usuários que preferem menos movimento.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    min-width: 320px;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+
+    background-color: var(--fundo);
+    color: var(--texto);
+
+    line-height: 1.6;
+
+    /* Transição suave quando muda de tema */
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Impede o rolamento quando um modal está aberto */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   IMAGENS
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BOTÕES E INPUTS
+   ========================================================= */
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE - FOCO
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--rosa-forte);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(92%, 1180px);
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   TEXTO SOMENTE PARA LEITORES DE TELA
+   ========================================================= */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   BOTÃO "PULAR PARA O CONTEÚDO"
+   ========================================================= */
+
+.skip-link {
+    position: fixed;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 1000;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    background-color: var(--violeta-escuro);
+    color: var(--texto-claro);
+
+    transform: translateY(-160%);
+
+    transition: transform 0.2s;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--branco) 94%,
+            transparent
+        );
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+/* Conteúdo interno do cabeçalho */
+
+.header-inner {
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 1.45rem;
+
+    font-weight: 800;
+
+    color: var(--violeta);
+}
+
+
+/* Símbolo ao lado do nome */
+
+.brand-mark {
+    display: grid;
+
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    color: var(--texto-claro);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--violeta),
+            var(--rosa-forte)
+        );
+}
+
+
+/* =========================================================
+   MENU PRINCIPAL
+   ========================================================= */
+
+.main-nav {
+    display: flex;
+
+    gap: 26px;
+
+    align-items: center;
+}
+
+
+.main-nav a {
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s,
+        transform 0.2s;
+}
+
+
+.main-nav a:hover {
+    color: var(--violeta);
+}
+
+
+/* =========================================================
+   BOTÕES DO CABEÇALHO
+   ========================================================= */
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.icon-button,
+.account-button,
+.cart-button,
+.menu-button {
+
+    border: 1px solid var(--borda);
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    border-radius: 10px;
+
+    min-height: 40px;
+
+    padding: 7px 11px;
+
+    transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        color 0.3s;
+}
+
+
+.icon-button:hover,
+.account-button:hover,
+.cart-button:hover,
+.menu-button:hover {
+
+    border-color: var(--rosa-forte);
+
+    color: var(--violeta);
+}
+
+
+/* Botão da conta */
+
+.account-button {
+    font-weight: 700;
+}
+
+
+/* Carrinho */
+
+.cart-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* Número de produtos no carrinho */
+
+.cart-button strong {
+
+    min-width: 22px;
+
+    height: 22px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--texto-claro);
+
+    background-color: var(--violeta);
+
+    font-size: 0.75rem;
+}
+
+
+/* Botão do menu mobile */
+
+.menu-button {
+    display: none;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 30%,
+            color-mix(
+                in srgb,
+                var(--lilas) 70%,
+                transparent
+            ),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--rosa-claro),
+            var(--lilas-claro) 55%,
+            var(--lilas-claro)
+        );
+}
+
+
+/* Conteúdo principal do Hero */
+
+.hero-grid {
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding-block: 70px;
+}
+
+
+/* =========================================================
+   PEQUENO TÍTULO DAS SEÇÕES
+   ========================================================= */
+
+.eyebrow {
+
+    margin-bottom: 12px;
+
+    color: var(--violeta);
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+.hero h1 {
+
+    max-width: 760px;
+
+    margin-bottom: 22px;
+
+    font-size:
+        clamp(2.7rem, 7vw, 5.8rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+}
+
+
+/* Palavra destacada */
+
+.hero h1 span {
+    color: var(--violeta);
+}
+
+
+/* Texto do Hero */
+
+.hero-copy > p:not(.eyebrow) {
+
+    max-width: 650px;
+
+    color: var(--texto-suave);
+
+    font-size:
+        clamp(1rem, 2vw, 1.15rem);
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+   ========================================================= */
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+/* Botão padrão */
+
+.button {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 11px 21px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(91, 38, 124, 0.18);
+}
+
+
+/* Botão principal */
+
+.button.primary {
+
+    color: var(--texto-claro);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--violeta),
+            var(--rosa-forte)
+        );
+}
+
+
+/* Botão secundário */
+
+.button.secondary {
+
+    border: 1px solid var(--violeta);
+
+    color: var(--violeta);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--branco) 70%,
+            transparent
+        );
+}
+
+
+/* Botão ocupando toda a largura */
+
+.button.full {
+    width: 100%;
+}
+
+
+/* =========================================================
+   INDICADORES DE CONFIANÇA
+   ========================================================= */
+
+.trust-row {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: 25px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ILUSTRAÇÃO DO HERO
+   ========================================================= */
+
+.hero-art {
+
+    position: relative;
+
+    min-height: 440px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+/* Círculo principal */
+
+.jewel-display {
+
+    position: relative;
+
+    width: min(360px, 72vw);
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            color-mix(
+                in srgb,
+                var(--branco) 96%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--rosa) 75%,
+                transparent
+            )
+        );
+
+    box-shadow:
+        0 30px 70px
+        rgba(91, 38, 124, 0.18);
+}
+
+
+/* Anel ilustrativo */
+
+.jewel-ring {
+
+    position: absolute;
+
+    width: 52%;
+
+    aspect-ratio: 1;
+
+    border:
+        16px solid var(--rosa);
+
+    border-radius: 50%;
+
+    top: 24%;
+    left: 24%;
+}
+
+
+/* Corrente */
+
+.jewel-chain {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 54%;
+
+    background:
+        linear-gradient(
+            var(--lilas),
+            var(--violeta)
+        );
+
+    top: 4%;
+    left: 50%;
+}
+
+
+/* Pingente */
+
+.jewel-charm {
+
+    position: absolute;
+
+    top: 53%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 4rem;
+
+    color: var(--dourado);
+}
+
+
+/* Esferas decorativas */
+
+.orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+
+.orb-one {
+
+    width: 85px;
+    height: 85px;
+
+    right: 5%;
+    top: 18%;
+
+    background-color: var(--rosa);
+}
+
+
+.orb-two {
+
+    width: 55px;
+    height: 55px;
+
+    left: 5%;
+    bottom: 18%;
+
+    background-color: var(--lilas);
+}
+
+
+/* Brilhos */
+
+.sparkle {
+
+    position: absolute;
+
+    color: var(--violeta);
+
+    font-size: 2rem;
+}
+
+
+.sparkle-a {
+    top: 8%;
+    left: 13%;
+}
+
+
+.sparkle-b {
+    right: 12%;
+    bottom: 14%;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.section {
+    padding: 95px 0;
+}
+
+
+.section h2,
+.contact-card h2,
+.modal h2 {
+
+    margin-bottom: 20px;
+
+    font-size:
+        clamp(2rem, 5vw, 3.2rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   CABEÇALHO DAS SEÇÕES
+   ========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   CAMPO DE BUSCA
+   ========================================================= */
+
+.search-box input {
+
+    width: 250px;
+
+    padding: 12px 15px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 12px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.search-box input::placeholder {
+    color: var(--texto-suave);
+}
+
+
+.search-box input:focus {
+
+    border-color: var(--violeta);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        color-mix(
+            in srgb,
+            var(--violeta) 20%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 28px;
+}
+
+
+.filter {
+
+    padding: 9px 15px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 999px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+}
+
+
+.filter.active,
+.filter:hover {
+
+    border-color: var(--violeta);
+
+    background-color: var(--violeta);
+
+    color: var(--texto-claro);
+}
+
+
+/* =========================================================
+   GRID DOS PRODUTOS
+   ========================================================= */
+
+.product-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD DO PRODUTO
+   ========================================================= */
+
+.product-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    background-color: var(--branco);
+
+    box-shadow:
+        0 5px 18px
+        rgba(71, 29, 88, 0.04);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+/* Efeito do card */
+
+.product-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* =========================================================
+   IMAGEM / MINIATURA DO PRODUTO
+   ========================================================= */
+
+.product-thumb {
+
+    position: relative;
+
+    min-height: 210px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--rosa-claro),
+            var(--lilas-claro)
+        );
+}
+
+
+/* Símbolo do produto */
+
+.product-symbol {
+
+    width: 105px;
+    height: 105px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        8px solid var(--dourado-borda);
+
+    color: var(--dourado);
+
+    font-size: 2.2rem;
+
+    border-radius: 50%;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--branco) 55%,
+            transparent
+        );
+}
+
+
+/* Produto prateado */
+
+.product-symbol.silver {
+
+    border-color: var(--prata-borda);
+
+    color: var(--prata);
+}
+
+
+/* Produto misto */
+
+.product-symbol.mixed {
+
+    border-color: var(--lilas);
+
+    color: var(--violeta);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO PRODUTO
+   ========================================================= */
+
+.product-body {
+    padding: 20px;
+}
+
+
+.product-category {
+
+    color: var(--violeta);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.product-card h3 {
+
+    margin: 5px 0 8px;
+
+    font-size: 1.15rem;
+
+    color: var(--texto);
+}
+
+
+.product-description {
+
+    min-height: 50px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.9rem;
+}
+
+
+/* Preço */
+
+.product-price {
+
+    margin: 14px 0;
+
+    font-size: 1.15rem;
+
+    font-weight: 900;
+
+    color: var(--texto);
+}
+
+
+/* =========================================================
+   BOTÕES DOS PRODUTOS
+   ========================================================= */
+
+/* =========================================
+   BOTÕES DOS PRODUTOS
+   ========================================= */
+
+.product-actions {
+    display: grid;
+
+    /* Divide o espaço igualmente entre os dois botões */
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+/* Garante que os dois botões ocupem a mesma altura */
+.product-actions .button {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 9px 12px;
+
+    border-radius: 11px;
+
+    font-size: 0.9rem;
+}
+
+/* Botão Ver detalhes */
+.product-actions .detail-button {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--violeta);
+
+    background: var(--branco);
+
+    color: var(--violeta);
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.product-actions .detail-button:hover {
+    background: var(--violeta);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(91, 38, 124, 0.18);
+}
+
+
+.product-actions .button {
+
+    min-height: 42px;
+
+    padding: 8px 12px;
+}
+
+
+/* Botão "Ver detalhes" */
+
+.detail-button {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 42px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 11px;
+
+    color: var(--violeta);
+
+    background-color: var(--branco);
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+}
+
+
+.detail-button:hover {
+
+    background-color: var(--violeta);
+
+    border-color: var(--violeta);
+
+    color: var(--texto-claro);
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.empty-state {
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: var(--texto-suave);
+}
+
+
+/* =========================================================
+   SEÇÃO "COMO FUNCIONA"
+   ========================================================= */
+
+.how-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--fundo-secundario),
+            var(--rosa-claro)
+        );
+}
+
+
+/* Etapas */
+
+.steps {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Card da etapa */
+
+.step {
+
+    padding: 30px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    background-color: var(--branco);
+
+    box-shadow:
+        0 5px 18px
+        rgba(71, 29, 88, 0.04);
+}
+
+
+/* Número */
+
+.step > span {
+
+    color: var(--violeta);
+
+    font-weight: 900;
+}
+
+
+.step h3 {
+
+    margin: 15px 0 8px;
+
+    color: var(--texto);
+}
+
+
+.step p {
+
+    color: var(--texto-suave);
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rosa-claro),
+            var(--lilas-claro)
+        );
+
+    border:
+        1px solid var(--borda);
+}
+
+
+.contact-card p:not(.eyebrow) {
+
+    color: var(--texto-suave);
+}
+
+
+/* Links de contato */
+
+.contact-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.contact-links a {
+
+    padding: 11px 17px;
+
+    border-radius: 11px;
+
+    background-color: var(--branco);
+
+    color: var(--violeta-escuro);
+
+    font-weight: 800;
+
+    border:
+        1px solid var(--borda);
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+
+.contact-links a:hover {
+
+    background-color: var(--violeta);
+
+    color: var(--texto-claro);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.footer {
+
+    padding: 25px 0;
+
+    background-color: var(--violeta-escuro);
+
+    color: var(--texto-claro);
+
+    font-size: 0.9rem;
+}
+
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.footer a {
+
+    color: var(--texto-claro);
+
+    font-weight: 700;
+}
+
+
+.footer a:hover {
+    color: var(--rosa);
+}
+
+/* =====================================================
+   FUNDO ESCURO ATRÁS DO MODAL
+===================================================== */
+
+.modal-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 20px;
+
+    background: rgba(26, 15, 31, .58);
+
+    /*
+        Permite rolagem caso a tela seja
+        muito pequena.
+    */
+    overflow-y: auto;
+}
+
+
+.modal-backdrop[hidden],
+.drawer-backdrop[hidden] {
+    display: none;
+}
+
+
+/* Caixa do modal */
+
+.modal {
+
+    position: relative;
+
+    width: min(100%, 480px);
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* Botão fechar */
+
+.modal-close {
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    color: var(--texto);
+
+    font-size: 1.8rem;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s;
+}
+
+
+.modal-close:hover {
+
+    background-color: var(--rosa-claro);
+
+    color: var(--violeta);
+}
+
+
+.modal > .modal-close {
+
+    position: absolute;
+
+    right: 14px;
+    top: 14px;
+}
+
+
+/* =========================================================
+   ABAS DO LOGIN
+   ========================================================= */
+
+.tabs {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 5px;
+
+    margin-bottom: 20px;
+
+    padding: 5px;
+
+    border-radius: 12px;
+
+    background-color: var(--rosa-claro);
+}
+
+
+.tab {
+
+    padding: 10px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    color: var(--texto);
+
+    font-weight: 800;
+}
+
+
+.tab.active {
+
+    background-color: var(--branco);
+
+    color: var(--violeta);
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+.account-form {
+
+    display: grid;
+
+    gap: 15px;
+}
+
+
+.account-form label {
+
+    display: grid;
+
+    gap: 6px;
+
+    color: var(--texto);
+
+    font-weight: 700;
+}
+
+
+.account-form input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 10px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+}
+
+
+.account-form input::placeholder {
+    color: var(--texto-suave);
+}
+
+
+.account-form input:focus {
+
+    outline: none;
+
+    border-color: var(--violeta);
+
+    box-shadow:
+        0 0 0 3px
+        color-mix(
+            in srgb,
+            var(--violeta) 20%,
+            transparent
+        );
+}
+
+
+/* Mensagem do formulário */
+
+.form-message {
+
+    min-height: 24px;
+
+    margin-top: 15px;
+
+    color: var(--violeta);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARRINHO LATERAL
+   ========================================================= */
+
+.cart-drawer {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    z-index: 90;
+
+    width: min(440px, 92vw);
+
+    height: 100dvh;
+
+    display: grid;
+
+    grid-template-rows:
+        auto 1fr auto;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    box-shadow:
+        -20px 0 60px
+        rgba(0, 0, 0, 0.16);
+
+    transform: translateX(105%);
+
+    transition:
+        transform 0.25s;
+}
+
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+
+/* Fundo atrás do carrinho */
+
+.drawer-backdrop {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 80;
+
+    background-color:
+        rgba(26, 15, 31, 0.45);
+}
+
+
+/* Cabeçalho e rodapé do carrinho */
+
+.drawer-header,
+.cart-footer {
+
+    padding: 20px;
+
+    border-bottom:
+        1px solid var(--borda);
+}
+
+
+.drawer-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.cart-footer {
+
+    border-top:
+        1px solid var(--borda);
+
+    border-bottom: 0;
+}
+
+
+/* Produtos do carrinho */
+
+.cart-items {
+
+    overflow: auto;
+
+    padding: 15px 20px;
+}
+
+
+.cart-item {
+
+    display: grid;
+
+    grid-template-columns:
+        58px 1fr auto;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid var(--borda);
+}
+
+
+/* Miniatura */
+
+.cart-item-thumb {
+
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rosa-claro),
+            var(--lilas-claro)
+        );
+}
+
+
+.cart-item h3 {
+
+    font-size: 0.95rem;
+
+    color: var(--texto);
+}
+
+
+.cart-item p {
+
+    color: var(--texto-suave);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   CONTROLE DE QUANTIDADE
+   ========================================================= */
+
+.qty-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 6px;
+}
+
+
+.qty-controls button {
+
+    width: 26px;
+    height: 26px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 7px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+}
+
+
+.qty-controls button:hover {
+
+    border-color: var(--violeta);
+
+    color: var(--violeta);
+}
+
+
+/* Total */
+
+.cart-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 1.1rem;
+}
+
+
+/* Botão limpar carrinho */
+
+.text-button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 8px;
+
+    border: 0;
+
+    background-color: transparent;
+
+    color: var(--violeta);
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PÁGINA DE DETALHES DO PRODUTO
+   ========================================================= */
+
+.back-link {
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: var(--violeta);
+
+    font-weight: 800;
+}
+
+
+.product-detail {
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 55px;
+
+    align-items: center;
+}
+
+
+/* Área visual do produto */
+
+.product-detail-art {
+
+    min-height: 470px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rosa-claro),
+            var(--lilas-claro)
+        );
+
+    border:
+        1px solid var(--borda);
+}
+
+
+/* Símbolo grande */
+
+.product-detail-art .product-symbol {
+
+    width: 190px;
+    height: 190px;
+
+    font-size: 4rem;
+}
+
+
+/* Título */
+
+.product-detail-copy h1 {
+
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(2.3rem, 5vw, 4rem);
+
+    line-height: 1;
+}
+
+
+/* Descrição */
+
+.product-detail-copy p {
+
+    margin-bottom: 18px;
+
+    color: var(--texto-suave);
+}
+
+
+/* Preço */
+
+.detail-price {
+
+    margin: 25px 0;
+
+    font-size: 1.7rem;
+
+    font-weight: 900;
+
+    color: var(--violeta);
+}
+
+
+/* =========================================================
+   NOTIFICAÇÃO / TOAST
+   ========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 200;
+
+    max-width: 330px;
+
+    padding: 13px 17px;
+
+    border-radius: 12px;
+
+    background-color: var(--violeta-escuro);
+
+    color: var(--texto-claro);
+
+    box-shadow: var(--sombra);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.25s,
+        transform 0.25s;
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================================
+   MODAL DE DETALHES DO PRODUTO
+   ========================================= */
+
+/*
+   Fundo escuro que cobre toda a página.
+*/
+.product-modal-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 150;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 20px;
+
+    background: rgba(35, 18, 42, 0.65);
+
+    backdrop-filter: blur(5px);
+}
+
+/*
+   Quando o atributo hidden estiver presente,
+   o modal não será exibido.
+*/
+.product-modal-backdrop[hidden] {
+    display: none;
+}
+
+/*
+   Caixa principal do modal.
+*/
+.product-modal {
+    position: relative;
+
+    width: min(100%, 700px);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+
+    background: var(--branco);
+
+    color: var(--texto);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.3);
+
+    animation: modalEntrada 0.2s ease;
+}
+
+/*
+   Animação de entrada do modal.
+*/
+@keyframes modalEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/*
+   Botão X para fechar.
+*/
+.product-modal .modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--rosa-claro);
+
+    color: var(--texto);
+
+    font-size: 1.6rem;
+
+    display: grid;
+
+    place-items: center;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.product-modal .modal-close:hover {
+    background: var(--violeta);
+
+    color: #ffffff;
+
+    transform: rotate(5deg);
+}
+
+/*
+   Área visual do produto.
+*/
+.product-modal-art {
+    min-height: 320px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rosa-claro),
+            #eee4ff
+        );
+}
+
+/*
+   Símbolo do produto dentro do modal.
+*/
+.product-modal-art .product-symbol {
+    width: 160px;
+
+    height: 160px;
+
+    font-size: 3.5rem;
+}
+
+/*
+   Área das informações.
+*/
+.product-modal-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+/*
+   Título do produto.
+*/
+.product-modal-content h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+    line-height: 1.1;
+
+    color: var(--texto);
+}
+
+/*
+   Descrição.
+*/
+.product-modal-content > p:not(.eyebrow) {
+    margin-bottom: 15px;
+
+    color: var(--texto-suave);
+
+    font-size: 1rem;
+}
+
+/*
+   Preço.
+*/
+.product-modal-price {
+    margin: 15px 0 25px;
+
+    color: var(--violeta);
+
+    font-size: 1.6rem;
+
+    font-weight: 900;
+}
+
+/*
+   Botões do modal.
+*/
+.product-modal-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+/*
+   Garante que os botões tenham o mesmo tamanho.
+*/
+.product-modal-actions .button {
+    width: 100%;
+
+    min-height: 46px;
+}
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+/* Botão flutuante */
+
+.accessibility-button {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 150;
+
+    width: 52px;
+
+    height: 52px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--violeta);
+
+    color: #ffffff;
+
+    font-size: 1.4rem;
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform .2s,
+        background .2s;
+}
+
+
+.accessibility-button:hover {
+
+    transform: scale(1.08);
+
+    background: var(--violeta-escuro);
+}
+
+
+/* Painel */
+
+.accessibility-panel {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 85px;
+
+    z-index: 149;
+
+    width: min(300px, calc(100vw - 40px));
+
+    padding: 20px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    background: var(--branco);
+
+    color: var(--texto);
+
+    box-shadow: var(--sombra);
+}
+
+
+.accessibility-panel h2 {
+
+    margin-bottom: 15px;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* Botões */
+
+.accessibility-panel button {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 10px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 10px;
+
+    background: var(--rosa-claro);
+
+    color: var(--texto);
+
+    font-weight: 700;
+}
+
+
+.accessibility-panel button:hover {
+
+    background: var(--lilas);
+
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE
+===================================================== */
+
+body.high-contrast {
+
+    --fundo: #000000;
+
+    --branco: #000000;
+
+    --fundo-card: #000000;
+
+    --texto: #ffffff;
+
+    --texto-suave: #ffffff;
+
+    --borda: #ffffff;
+
+    --violeta: #ffff00;
+
+}
+
+
+body.high-contrast a {
+
+    text-decoration: underline;
+
+}
+
+/*
+   Responsividade para celulares.
+*/
+@media (max-width: 650px) {
+
+    .product-modal {
+        grid-template-columns: 1fr;
+
+        width: min(100%, 450px);
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+    .product-modal-art {
+        min-height: 220px;
+    }
+
+    .product-modal-art .product-symbol {
+        width: 130px;
+
+        height: 130px;
+
+        font-size: 3rem;
+    }
+
+    .product-modal-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero-grid {
+
+        grid-template-columns:
+            1fr 0.7fr;
+    }
+}
+
+
+/* =========================================================
+   TABLETS PEQUENOS / CELULARES
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* -------------------------
+       MENU MOBILE
+       ------------------------- */
+
+    .main-nav {
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 15px 4%;
+
+        border-bottom:
+            1px solid var(--borda);
+
+        background-color: var(--menu-fundo);
+    }
+
+
+    .main-nav.open {
+        display: flex;
+    }
+
+
+    .main-nav a {
+        padding: 10px;
+    }
+
+
+    .menu-button {
+        display: inline-block;
+    }
+
+
+    /* Esconde botão de conta no celular */
+
+    .account-button {
+        display: none;
+    }
+
+
+    /* Esconde texto "Carrinho" */
+
+    .cart-button span {
+        display: none;
+    }
+
+
+    /* -------------------------
+       HERO
+       ------------------------- */
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-block: 55px;
+    }
+
+
+    .hero-copy > p:not(.eyebrow),
+    .trust-row {
+
+        margin-inline: auto;
+    }
+
+
+    .hero-actions {
+
+        justify-content: center;
+    }
+
+
+    .hero-art {
+        min-height: 300px;
+    }
+
+
+    .jewel-display {
+        width: 270px;
+    }
+
+
+    /* -------------------------
+       SEÇÕES
+       ------------------------- */
+
+    .section {
+        padding: 70px 0;
+    }
+
+
+    .section-heading {
+
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .search-box input {
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       ETAPAS
+       ------------------------- */
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -------------------------
+       CONTATO
+       ------------------------- */
+
+    .contact-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 32px;
+    }
+
+
+    /* -------------------------
+       DETALHES DO PRODUTO
+       ------------------------- */
+
+    .product-detail {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    /* Cabeçalho */
+
+    .header-inner {
+        min-height: 64px;
+    }
+
+
+    .brand {
+        font-size: 1.2rem;
+    }
+
+
+    .header-actions {
+        gap: 4px;
+    }
+
+
+    .icon-button {
+        padding: 7px 9px;
+    }
+
+
+    /* Produtos */
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Hero */
+
+    .hero h1 {
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .hero-art {
+        min-height: 250px;
+    }
+
+
+    .jewel-display {
+        width: 230px;
+    }
+
+
+    .trust-row {
+
+        justify-content: center;
+    }
+
+
+    /* Modal */
+
+    /* =====================================================
+   MODAL DA CONTA
+    ===================================================== */
+
+    .modal {
+        position: relative;
+
+        width: min(100%, 480px);
+
+        /*
+            Impede que o modal ultrapasse
+            o tamanho da tela.
+        */
+        max-height: calc(100dvh - 40px);
+
+        /*
+            Permite rolagem somente dentro
+            do modal quando necessário.
+        */
+        overflow-y: auto;
+
+        padding: 32px;
+
+        border-radius: 20px;
+
+        background: var(--branco);
+
+        color: var(--texto);
+
+        box-shadow:
+            0 30px 90px rgba(0, 0, 0, .25);
+    }
+
+
+    /* Rodapé */
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* Links de contato */
+
+    .contact-links {
+
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+
+    .contact-links a {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+}

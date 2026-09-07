@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- Define o conjunto de caracteres utilizado pela página -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que a página se adapte a celulares, tablets e computadores -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Descrição utilizada por mecanismos de busca -->
+    <meta
+        name="description"
+        content="Scartemis — scoop premiados e acessórios de aço."
+    >
+
+    <!-- Define a cor principal da interface em dispositivos compatíveis -->
+    <meta
+        name="theme-color"
+        content="#8f3fb8"
+    >
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Scartemis | Scoop Premiados</title>
+
+    <!-- Arquivo responsável pela aparência e responsividade do site -->
+    <link
+        rel="stylesheet"
+        href="CSS/style.css"
+    >
+
+    <!--
+        Arquivo JavaScript principal.
+
+        O atributo "defer" faz com que o navegador carregue o
+        JavaScript sem impedir o carregamento do HTML.
+    -->
+    <script
+        defer
+        src="JS/script.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ACESSIBILIDADE
+         ===================================================== -->
+
+    <!--
+        Link utilizado por pessoas que navegam pelo teclado.
+
+        Ao acioná-lo, o usuário pode pular diretamente para
+        o conteúdo principal da página.
+    -->
+    <a
+        class="skip-link"
+        href="#conteudo"
+    >
+        Pular para o conteúdo
+    </a>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!--
+                Logo/nome da loja.
+
+                Ao clicar, o usuário retorna para a página inicial.
+            -->
+            <a
+                class="brand"
+                href="#inicio"
+                aria-label="Scartemis - início"
+            >
+
+                <!-- Símbolo decorativo da marca -->
+                <span
+                    class="brand-mark"
+                    aria-hidden="true"
+                >
+                    ✦
+                </span>
+
+                Scartemis
+
+            </a>
+
+
+            <!-- =================================================
+                 MENU PRINCIPAL
+                 ================================================= -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+                aria-label="Navegação principal"
+            >
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#scoops">
+                    Scoops
+                </a>
+
+                <a href="#como-funciona">
+                    Como funciona
+                </a>
+
+                <a href="#contato">
+                    Contato
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 AÇÕES DO CABEÇALHO
+                 ================================================= -->
+
+            <div class="header-actions">
+
+                <!--
+                    Botão para alternar entre modo claro e escuro.
+                    O JavaScript controla seu funcionamento.
+                -->
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Ativar modo escuro"
+                >
+                    ☾
+                </button>
+
+
+                <!--
+                    Botão da área de login/cadastro.
+                    O JavaScript abre o modal da conta.
+                -->
+                <button
+                    class="account-button"
+                    id="accountButton"
+                    type="button"
+                >
+                    Entrar
+                </button>
+
+
+                <!--
+                    Botão que abre o carrinho de compras.
+
+                    O elemento cartCount mostra automaticamente
+                    a quantidade de produtos no carrinho.
+                -->
+                <button
+                    class="cart-button"
+                    id="cartButton"
+                    type="button"
+                    aria-label="Abrir carrinho"
+                >
+
+                    🛒
+
+                    <span>
+                        Carrinho
+                    </span>
+
+                    <strong id="cartCount">
+                        0
+                    </strong>
+
+                </button>
+
+
+                <!--
+                    Botão utilizado principalmente em telas pequenas
+                    para abrir e fechar o menu de navegação.
+                -->
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="mainNav"
+                    aria-label="Abrir menu"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main id="conteudo">
+
+
+        <!-- =================================================
+             SEÇÃO HERO
+             ================================================= -->
+
+        <section
+            class="hero"
+            id="inicio"
+            aria-labelledby="heroTitle"
+        >
+
+            <div class="container hero-grid">
+
+
+                <!-- Texto principal da página -->
+
+                <div class="hero-copy">
+
+                    <p class="eyebrow">
+                        SCOOP PREMIADO • AÇO
+                    </p>
+
+
+                    <h1 id="heroTitle">
+
+                        Descubra sua próxima
+
+                        <span>
+                            joia favorita.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+                        Uma experiência divertida para descobrir
+                        pacotes de pulseiras, brincos, anéis,
+                        colares e outros adereços em aço,
+                        nas cores dourada e prateada.
+                    </p>
+
+
+                    <!-- Botões principais da seção -->
+
+                    <div class="hero-actions">
+
+                        <a
+                            class="button primary"
+                            href="#scoops"
+                        >
+                            Ver scoops
+                        </a>
+
+                        <a
+                            class="button secondary"
+                            href="#como-funciona"
+                        >
+                            Como funciona?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Informações de confiança -->
+
+                    <div class="trust-row">
+
+                        <span>
+                            ✓ Compra simples
+                        </span>
+
+                        <span>
+                            ✓ Site responsivo
+                        </span>
+
+                        <span>
+                            ✓ Navegação acessível
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Elemento visual da seção Hero -->
+
+                <div
+                    class="hero-art"
+                    aria-label="Ilustração decorativa de acessórios"
+                >
+
+                    <div class="sparkle sparkle-a">
+                        ✦
+                    </div>
+
+                    <div class="sparkle sparkle-b">
+                        ✧
+                    </div>
+
+                    <div class="orb orb-one"></div>
+
+                    <div class="orb orb-two"></div>
+
+
+                    <div class="jewel-display">
+
+                        <span class="jewel-ring"></span>
+
+                        <span class="jewel-chain"></span>
+
+                        <span class="jewel-charm">
+                            ✦
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SEÇÃO DE PRODUTOS
+             ================================================= -->
+
+        <section
+            class="section"
+            id="scoops"
+            aria-labelledby="scoopsTitle"
+        >
+
+            <div class="container">
+
+
+                <!-- Cabeçalho da seção de produtos -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            ESCOLHA SEU SCOOP
+                        </p>
+
+                        <h2 id="scoopsTitle">
+                            Miniaturas dos produtos
+                        </h2>
+
+                    </div>
+
+
+                    <!-- Campo de pesquisa -->
+
+                    <label class="search-box">
+
+                        <!--
+                            Texto utilizado por leitores de tela.
+                            Visualmente ele pode ficar oculto através
+                            da classe "sr-only".
+                        -->
+
+                        <span class="sr-only">
+                            Buscar produto
+                        </span>
+
+                        <input
+                            id="productSearch"
+                            type="search"
+                            placeholder="Buscar scoop..."
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- =================================================
+                     FILTROS
+                     ================================================= -->
+
+                <div
+                    class="filters"
+                    role="group"
+                    aria-label="Filtrar produtos"
+                >
+
+                    <button
+                        class="filter active"
+                        type="button"
+                        data-category="todos"
+                    >
+                        Todos
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        type="button"
+                        data-category="dourado"
+                    >
+                        Dourados
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        type="button"
+                        data-category="prateado"
+                    >
+                        Prateados
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        type="button"
+                        data-category="misto"
+                    >
+                        Mistos
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     GRADE DE PRODUTOS
+                     ================================================= -->
+
+                <!--
+                    IMPORTANTE:
+
+                    Os produtos são criados automaticamente pelo
+                    JavaScript dentro deste elemento.
+
+                    Cada card deverá possuir:
+
+                    - imagem;
+                    - nome;
+                    - preço;
+                    - botão "Adicionar ao carrinho";
+                    - botão "Ver detalhes".
+
+                    Portanto, não é necessário criar manualmente
+                    cada produto neste HTML.
+                -->
+
+                <div
+                    class="product-grid"
+                    id="productGrid"
+                    aria-live="polite"
+                ></div>
+
+
+                <!--
+                    Mensagem apresentada quando a pesquisa ou filtro
+                    não encontrar nenhum produto.
+                -->
+
+                <p
+                    class="empty-state"
+                    id="emptyState"
+                    hidden
+                >
+                    Nenhum produto encontrado.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COMO FUNCIONA
+             ================================================= -->
+
+        <section
+            class="section how-section"
+            id="como-funciona"
+            aria-labelledby="howTitle"
+        >
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    COMO FUNCIONA
+                </p>
+
+
+                <h2 id="howTitle">
+                    Comprar na Scartemis é simples
+                </h2>
+
+
+                <div class="steps">
+
+
+                    <!-- Etapa 1 -->
+
+                    <article class="step">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Escolha
+                        </h3>
+
+                        <p>
+                            Selecione o scoop que mais combina
+                            com você.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Etapa 2 -->
+
+                    <article class="step">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Adicione
+                        </h3>
+
+                        <p>
+                            Coloque o produto no carrinho e
+                            confira seus itens.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Etapa 3 -->
+
+                    <article class="step">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Finalize
+                        </h3>
+
+                        <p>
+                            Na versão real, o pedido segue para
+                            pagamento e entrega.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTATO
+             ================================================= -->
+
+        <section
+            class="section contact-section"
+            id="contato"
+            aria-labelledby="contactTitle"
+        >
+
+            <div class="container contact-card">
+
+
+                <!-- Texto da área de contato -->
+
+                <div>
+
+                    <p class="eyebrow">
+                        FALE CONOSCO
+                    </p>
+
+                    <h2 id="contactTitle">
+                        Entre em contato
+                    </h2>
+
+                    <p>
+                        Precisa de ajuda com seu pedido ou quer
+                        saber mais sobre os scoops?
+                    </p>
+
+                </div>
+
+
+                <!-- Links de contato -->
+
+                <div class="contact-links">
+
+                    <a
+                        href="https://instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/5500000000000"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+
+
+                    <a
+                        href="mailto:contato@scartemis.com"
+                    >
+                        E-mail
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <p>
+                © 2026 Scartemis. Todos os direitos reservados.
+            </p>
+
+
+            <!-- Retorna para o início da página -->
+
+            <a href="#inicio">
+                Voltar ao topo ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MODAL DE LOGIN E CADASTRO
+         ===================================================== -->
+
+        <!-- =====================================================
+        MODAL DE CONTA
+        Contém as áreas de login e cadastro.
+        Apenas uma delas fica visível por vez.
+    ===================================================== -->
+
+    <div class="modal-backdrop" id="accountModal" hidden>
+
+        <section
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="accountTitle">
+
+            <!-- Botão para fechar o modal -->
+            <button
+                class="modal-close"
+                type="button"
+                data-close="accountModal"
+                aria-label="Fechar janela">
+                ×
+            </button>
+
+            <p class="eyebrow">MINHA CONTA</p>
+
+            <h2 id="accountTitle">
+                Minha conta
+            </h2>
+
+            <!-- =================================================
+                ABAS
+                O usuário escolhe entre entrar ou criar conta.
+            ================================================== -->
+
+            <div
+                class="tabs"
+                role="tablist"
+                aria-label="Opções da conta">
+
+                <button
+                    class="tab active"
+                    type="button"
+                    data-account-tab="login"
+                    role="tab"
+                    aria-selected="true">
+
+                    Entrar
+
+                </button>
+
+                <button
+                    class="tab"
+                    type="button"
+                    data-account-tab="register"
+                    role="tab"
+                    aria-selected="false">
+
+                    Criar conta
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                FORMULÁRIO DE LOGIN
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="account-form">
+
+                <label for="loginEmail">
+                    E-mail
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        required
+                        autocomplete="email">
+                </label>
+
+
+                <label for="loginPassword">
+                    Senha
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        required
+                        minlength="6"
+                        autocomplete="current-password">
+                </label>
+
+
+                <button
+                    class="button primary"
+                    type="submit">
+
+                    Entrar
+
+                </button>
+
+            </form>
+
+
+            <!-- =================================================
+                FORMULÁRIO DE CADASTRO
+                Começa oculto.
+            ================================================== -->
+
+            <form
+                id="registerForm"
+                class="account-form"
+                hidden>
+
+                <label for="registerName">
+                    Nome
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        required
+                        autocomplete="name">
+                </label>
+
+
+                <label for="registerEmail">
+                    E-mail
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        required
+                        autocomplete="email">
+                </label>
+
+
+                <label for="registerPassword">
+                    Senha
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        required
+                        minlength="6"
+                        autocomplete="new-password">
+                </label>
+
+
+                <button
+                    class="button primary"
+                    type="submit">
+
+                    Criar conta
+
+                </button>
+
+            </form>
+
+
+            <!-- Mensagens de sucesso ou erro -->
+            <p
+                class="form-message"
+                id="accountMessage"
+                role="status"
+                aria-live="polite">
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         CARRINHO DE COMPRAS
+         ===================================================== -->
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+        aria-label="Carrinho de compras"
+        aria-hidden="true"
+    >
+
+
+        <!-- Cabeçalho do carrinho -->
+
+        <div class="drawer-header">
+
+            <h2>
+                Seu carrinho
+            </h2>
+
+
+            <button
+                class="modal-close"
+                id="closeCart"
+                type="button"
+                aria-label="Fechar carrinho"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!--
+            O JavaScript insere aqui os produtos
+            adicionados ao carrinho.
+        -->
+
+        <div
+            id="cartItems"
+            class="cart-items"
+        ></div>
+
+
+        <!-- Informações finais do carrinho -->
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <button
+                class="button primary full"
+                id="checkoutButton"
+                type="button"
+            >
+                Finalizar pedido
+            </button>
+
+
+            <button
+                class="text-button"
+                id="clearCart"
+                type="button"
+            >
+                Limpar carrinho
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!--
+        Fundo utilizado quando o carrinho estiver aberto.
+    -->
+
+    <div
+        class="drawer-backdrop"
+        id="drawerBackdrop"
+        hidden
+    ></div>
+
+
+    <!--
+        Área utilizada pelo JavaScript para mostrar
+        mensagens rápidas ao usuário.
+    -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <!-- =====================================================
+     BOTÃO DE ACESSIBILIDADE
+    ===================================================== -->
+
+    <button
+        class="accessibility-button"
+        id="accessibilityButton"
+        type="button"
+        aria-label="Abrir opções de acessibilidade"
+        aria-expanded="false">
+
+        ♿
+
+    </button>
+
+
+    <!-- =====================================================
+        PAINEL DE ACESSIBILIDADE
+    ===================================================== -->
+
+    <aside
+        class="accessibility-panel"
+        id="accessibilityPanel"
+        aria-label="Opções de acessibilidade"
+        hidden>
+
+        <h2>
+            Acessibilidade
+        </h2>
+
+        <button
+            type="button"
+            id="increaseText">
+
+            Aumentar texto
+
+        </button>
+
+        <button
+            type="button"
+            id="decreaseText">
+
+            Diminuir texto
+
+        </button>
+
+        <button
+            type="button"
+            id="resetAccessibility">
+
+            Tamanho padrão
+
+        </button>
+
+        <button
+            type="button"
+            id="highContrast">
+
+            Alto contraste
+
+        </button>
+
+        <button
+            type="button"
+            id="readPage">
+
+            🔊 Ler página
+
+        </button>
+
+        <button
+            type="button"
+            id="stopReading">
+
+            ⏹ Parar leitura
+
+        </button>
+
+    </aside>
+
+</body>
+
+<!-- =========================================
+     MODAL DE DETALHES DO PRODUTO
+     ========================================= -->
+
+<div
+    class="product-modal-backdrop"
+    id="productModal"
+    hidden>
+
+    <section
+        class="product-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="productModalTitle">
+
+        <!-- Botão para fechar o modal -->
+        <button
+            class="modal-close"
+            id="closeProductModal"
+            type="button"
+            aria-label="Fechar detalhes do produto">
+            ×
+        </button>
+
+        <!-- Área visual do produto -->
+        <div
+            class="product-modal-art"
+            id="productModalArt"
+            aria-hidden="true">
+        </div>
+
+        <!-- Informações do produto -->
+        <div class="product-modal-content">
+
+            <p
+                class="eyebrow"
+                id="productModalCategory">
+            </p>
+
+            <h2 id="productModalTitle"></h2>
+
+            <p id="productModalDescription"></p>
+
+            <div
+                class="product-modal-price"
+                id="productModalPrice">
+            </div>
+
+            <div class="product-modal-actions">
+
+                <!-- Adicionar ao carrinho -->
+                <button
+                    class="button primary"
+                    id="modalAddCart"
+                    type="button">
+                    Adicionar ao carrinho
+                </button>
+
+                <!-- Fechar -->
+                <button
+                    class="button secondary"
+                    id="modalContinue"
+                    type="button">
+                    Continuar comprando
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</html>
